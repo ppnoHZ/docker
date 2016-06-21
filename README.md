@@ -11,6 +11,8 @@
 
     >--link 将两个容器关联起来，如：--link [容器名]:[镜像名]
 
+    >-v 设置容器文件映射,如：-v "$PWD":/cookbook:ro ([宿主目录]:[容器对应目录]:[权限:ro表示 read-only])
+
 # 容器操作
 
 * docker rm 删除容器
@@ -26,3 +28,7 @@
 
 * docker build -t wordpress/test . 
   >从dockerfile中构建镜像
+
+# 管理
+
+* docker inspect -f {{.Mounts}} [container-id] 查看容器的mounts的映射信息
